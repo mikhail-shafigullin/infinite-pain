@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://unpkg.com/@strudel/web@1.0.3"></script>
+    
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        
+        <canvas id="canvas" style="z-index:1"></canvas>
+        <script src="$GODOT_URL"></script>
+        <div style="z-index: 9999; position: absolute;">
+            <button id="play">play</button>
+            <button id="stop">stop</button>
+        </div>
+        <script>
+            initStrudel();
+            document.getElementById('play').addEventListener('click', () => note('<c a f e>(3,8)').jux(rev).play());
+            document.getElementById('stop').addEventListener('click', () => hush());
+        </script>
+        <script>
+            var engine = new Engine($GODOT_CONFIG);
+            engine.startGame();
+        </script>
+    </body>
+</html>
