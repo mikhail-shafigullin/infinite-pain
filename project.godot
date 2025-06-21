@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="infinite-pain"
-run/main_scene="uid://di7ospesqiyjq"
+run/main_scene="uid://dqyjr7vva7gqq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://src/global/Global.gd"
 
 [debug_draw_3d]
 

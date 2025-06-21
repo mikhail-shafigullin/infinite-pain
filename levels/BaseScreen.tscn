@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqyjr7vva7gqq"]
+
+[ext_resource type="PackedScene" uid="uid://di7ospesqiyjq" path="res://levels/BaseLevel.tscn" id="1_k5maj"]
+[ext_resource type="Script" uid="uid://2bh2ckx57f3r" path="res://src/global/jsController.gd" id="2_a6bca"]
+[ext_resource type="Script" uid="uid://vto3r6gcydfd" path="res://src/global/bpmController.gd" id="3_kjs3f"]
+[ext_resource type="Script" uid="uid://dx7gqo0kj3ncj" path="res://src/global/screenController.gd" id="5_n7dvi"]
+
+[node name="BaseScreen" type="Node3D"]
+
+[node name="LoadedLevel" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="BaseLevel" parent="LoadedLevel" instance=ExtResource("1_k5maj")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="Globals" type="Node" parent="."]
+
+[node name="jsController" type="Node" parent="Globals"]
+unique_name_in_owner = true
+script = ExtResource("2_a6bca")
+
+[node name="bpmController" type="Node" parent="Globals"]
+unique_name_in_owner = true
+script = ExtResource("3_kjs3f")
+
+[node name="screenController" type="Node" parent="Globals"]
+unique_name_in_owner = true
+script = ExtResource("5_n7dvi")

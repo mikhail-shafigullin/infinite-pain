@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://gd6a3r37gt8t"]
+
+[ext_resource type="Script" uid="uid://j2b1bbxlbs4a" path="res://src/ui/rhythm_delay_check_ui.gd" id="1_fug5s"]
+
+[node name="RhythmDelayCheckUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fug5s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_right = 113.0
+offset_bottom = 40.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]Check rhythm"
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -254.0
+offset_top = 31.0
+offset_right = 254.0
+offset_bottom = 197.0
+grow_horizontal = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Control"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 9.0
+offset_right = 20.0
+offset_bottom = 89.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+editor_only = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 108.0
+offset_bottom = 140.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]Current delay: +0"
+
+[node name="beats" type="Control" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="beatTemplate" type="ColorRect" parent="Control/beats"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_top = 38.0
+offset_right = 10.0
+offset_bottom = 58.0
+grow_horizontal = 2

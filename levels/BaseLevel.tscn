@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://di7ospesqiyjq"]
+[gd_scene load_steps=7 format=3 uid="uid://di7ospesqiyjq"]
 
 [ext_resource type="PackedScene" uid="uid://cuk02rbfcwly1" path="res://objects/player.tscn" id="1_80vhd"]
+[ext_resource type="Script" uid="uid://dfak5fn3l7jyj" path="res://src/levels/levelController.gd" id="1_hjsbj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_umreq"]
 size = Vector2(50, 50)
@@ -13,7 +14,8 @@ size = Vector3(60, 1, 60)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hjsbj"]
 size = Vector3(3.82001, 12.1421, 3.06885)
 
-[node name="Level" type="Node3D"]
+[node name="BaseLevel" type="Node3D"]
+script = ExtResource("1_hjsbj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

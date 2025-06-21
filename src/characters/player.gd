@@ -4,12 +4,14 @@ extends CharacterBody3D
 # Movement settings
 @export var speed: float = 5.0
 @export var jump_velocity: float = 4.5
-@export var mouse_sensitivity: float = 0.00003
+@export var mouse_sensitivity: float = 0.005
 
 # Camera settings
 @onready var camera: Camera3D = %Camera3D
 @export var max_look_up: float = 1.2
 @export var max_look_down: float = -1.2
+
+var mouseInput = Vector2(0, 0);
 
 # Physics
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -47,7 +49,7 @@ func handle_mouse_look():
 	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		return
 
-	var mouse_delta = Input.get_last_mouse_velocity() * mouse_sensitivity
+	var mouse_delta = mouseInput * mouse_sensitivity
 	
 	# Horizontal rotation
 	rotate_y(-mouse_delta.x)
@@ -56,8 +58,15 @@ func handle_mouse_look():
 	if camera:
 		camera.rotate_x(-mouse_delta.y)
 		camera.rotation.x = clamp(camera.rotation.x, max_look_down, max_look_up)
+		
+	mouseInput = Vector2(0, 0)
 
 func _input(event):
+	
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		mouseInput.x += event.relative.x
+		mouseInput.y += event.relative.y
+		
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuk02rbfcwly1"]
+[gd_scene load_steps=5 format=3 uid="uid://cuk02rbfcwly1"]
 
-[ext_resource type="Script" uid="uid://7xr1vrjp42ac" path="res://src/player.gd" id="1_eqqp1"]
-[ext_resource type="Script" uid="uid://2bh2ckx57f3r" path="res://src/jsController.gd" id="2_ykyjo"]
+[ext_resource type="Script" uid="uid://7xr1vrjp42ac" path="res://src/characters/player.gd" id="1_eqqp1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_umreq"]
 
@@ -27,6 +26,3 @@ mesh = SubResource("CapsuleMesh_bxedw")
 [node name="Eyes" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.709802, 0, 0, 0, 0.430213, 0, 0, 0, 0.63885, 0, 1.50258, -0.229809)
 mesh = SubResource("BoxMesh_bxedw")
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("2_ykyjo")
