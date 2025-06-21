@@ -1,8 +1,8 @@
 extends Node
 
-static var jsController: JSController;
-static var bpmController: BpmController;
-static var screenController: ScreenController;
+var jsController: JSController;
+var bpmController: BpmController;
+var screenController: ScreenController;
 
-static func is_everything_loaded():
+func is_everything_loaded():
 	return jsController && bpmController && screenController;
