@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://unpkg.com/@strudel/web@1.0.3"></script>
+    <script src="https://unpkg.com/@strudel/repl@1.2.0"></script>
+    <script type="module">
+        import { strudel_music, godotConnector, strudelEditor } from './game-connector.js';
+        
+        window.gameConnector = godotConnector;
+        window.strudelEditor = strudelEditor;
+        
+        document.getElementById('play').addEventListener('click', () => godotConnector.play());
+        document.getElementById('stop').addEventListener('click', () => godotConnector.stop());
+    </script>
+    
     
     <head>
         <title>My Template</title>
         <meta charset="UTF-8">
+        <style>
+            #strudel * {
+                pointer-events: none;
+                opacity: 0.8;
+                background-color: rgba(0, 0, 0, 0)!important;
+                color: red;
+            }
+        </style>
     </head>
     <body>
         
@@ -13,12 +31,9 @@
         <div style="z-index: 9999; position: absolute;">
             <button id="play">play</button>
             <button id="stop">stop</button>
+            <div> J - play, K - stop </div>
+            <div id="strudel"></div>
         </div>
-        <script>
-            initStrudel();
-            document.getElementById('play').addEventListener('click', () => note('<c a f e>(3,8)').jux(rev).play());
-            document.getElementById('stop').addEventListener('click', () => hush());
-        </script>
         <script>
             var engine = new Engine($GODOT_CONFIG);
             engine.startGame();
