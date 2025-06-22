@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://nyhqvisgrlt3"]
+
+[ext_resource type="PackedScene" uid="uid://6ts0mlr07u60" path="res://objects/platforms/platform_BASE.tscn" id="1_o8bd8"]
+[ext_resource type="ArrayMesh" uid="uid://ddytyy5xf18ng" path="res://assetes/mesh/platforms/platforms_Rock9.res" id="2_4cke5"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fk3jn"]
+points = PackedVector3Array(1.46618, 0, -1.11461, 1.46618, -0.225118, -1.11461, 0.902264, 0, -1.96624, 1.3346, 0, 1.0963, 1.33272, -0.657771, -1.01324, 0.820183, -0.657771, -1.78753, 0.902264, -0.225118, -1.96624, 1.3346, -0.225118, 1.0963, -0.318931, 0, -2.08511, 0.708026, 0, 1.80423, 1.21305, -0.657771, 0.996563, 0.294486, -1.47235, -0.0219769, -0.290109, -0.657771, -1.89581, -0.318931, -0.225118, -2.08511, 0.708026, -0.225118, 1.80423, 0.643802, -0.657771, 1.63977, -1.73437, 0, -0.563407, -0.0874118, 0, 2.07372, -0.0792663, -0.657771, 1.88483, -0.813926, -0.657771, 1.4407, -1.4286, -0.657771, 0.313465, -0.363732, -1.25746, -0.560557, -1.62565, -0.65042, -0.543459, -1.73437, -0.225118, -0.563407, -0.0874118, -0.225118, 2.07372, -1.57177, 0, 0.344811, -0.895381, 0, 1.58481, -0.895381, -0.225118, 1.58481, -1.57177, -0.225118, 0.344811)
+
+[node name="Platform8" instance=ExtResource("1_o8bd8")]
+
+[node name="PlatformsRock9" type="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_4cke5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_fk3jn")

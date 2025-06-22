@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ts0mlr07u60"]
+
+[ext_resource type="Script" uid="uid://bxx2u75hkw66u" path="res://objects/platforms/platform.gd" id="1_oxomw"]
+
+[node name="PlatformBase" type="AnimatableBody3D"]
+script = ExtResource("1_oxomw")
