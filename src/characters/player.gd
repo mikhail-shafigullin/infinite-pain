@@ -2,8 +2,9 @@ class_name PlayerController
 extends CharacterBody3D
 
 # Movement settings
-@export var speed: float = 5.0
-@export var jump_velocity: float = 4.5
+@export var speed: float = 10.0
+@export var jump_velocity: float = 10;
+@export var jump_gravity_reduction = 0.2;
 @export var mouse_sensitivity: float = 0.005
 
 # Camera settings
@@ -28,10 +29,12 @@ func _physics_process(delta):
 
 func handle_movement(delta):
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= gravity * delta;
+		if !Input.is_action_pressed("jump"):
+			velocity.y -= jump_gravity_reduction;
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+		velocity.y = jump_velocity;
 
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

@@ -66,6 +66,10 @@ beat={
 ]
 }
 
+[physics]
+
+3d/default_gravity=8.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -50,11 +50,9 @@ func clear_beat():
 func evaluate_delay():
 	beat_delay_array.clear();
 	var approximate_delay = 0;
-	print("Expected beat delay:")
 	if(last_10_beats_expected.size() >= 10 and last_10_beats_actual.size() >= 10):
 		for i in 10:
 			beat_delay_array.push_back(last_10_beats_expected[i] - last_10_beats_actual[i]);
-		print("Expected beat delay:", beat_delay_array);
 		approximate_delay = beat_delay_array.reduce(func(accum, number): return accum + number, 0)/10;
 	
 	approximate_delay = approximate_delay % int(bpmTimerWaitTimeMs);

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dlwimg1b74j56"]
+
+[resource]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.586169, 0.269111, 0.279364, 1)
+disable_receive_shadows = true

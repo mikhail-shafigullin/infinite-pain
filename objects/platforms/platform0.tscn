@@ -5,23 +5,23 @@
 [ext_resource type="Shader" uid="uid://dyiuvi6a17lg8" path="res://assetes/materials/fracture.gdshader" id="2_cpsbs"]
 [ext_resource type="Texture2D" uid="uid://croffghjexhx4" path="res://assetes/texture/fracture.png" id="3_v2dd6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqxr2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cpsbs"]
 render_priority = 0
 shader = ExtResource("2_cpsbs")
 shader_parameter/fracture_texture = ExtResource("3_v2dd6")
 shader_parameter/primary = Color(0.53, 0.369, 0.185, 1)
 shader_parameter/bpm = 120
 shader_parameter/time_offset = 0.0
-shader_parameter/seed = 162675
+shader_parameter/seed = 2806367969
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cpsbs"]
 points = PackedVector3Array(1.54937, -0.0559027, -0.119689, 1.34978, -1.16461, -0.142067, 0.790978, 0, -1.47221, 1.53445, 0, -0.123419, 1.28683, 0, 0.70796, 1.28802, -0.113994, 0.672697, 1.17614, -1.21931, 0.615396, 0.73847, -1.97171, 0.115281, 0.530822, -1.63172, -0.99006, 0.694911, -1.09876, -1.26979, 0.299605, -0.136673, -1.77668, 0.334511, 0, -1.75363, 0.147151, 0, 1.68717, 0.503673, -1.00008, 1.14976, 0.417749, -1.66833, 0.936148, 0.476523, -2.03239, 0.365508, 0.0227411, -1.79605, -1.1267, 0.254555, -1.13715, -1.43355, -0.557837, -0.130904, -1.76142, -0.557837, 0, -1.76142, -0.444765, 0, 1.57799, -0.471019, -0.128914, 1.62376, 0.0618242, -0.949749, 1.37795, -0.174166, -1.60168, 0.994467, -0.551572, -1.69101, 0.711011, -0.448345, -1.84976, 0.34313, -0.530091, -1.41686, -1.26097, -0.504434, -1.69936, -0.983957, -1.29833, -0.0948952, -1.06838, -1.16497, -1.28258, -1.0277, -1.29833, 0, -1.06838, -1.09068, 0, 1.23215, -0.316178, -1.052, 1.25656, -1.08233, -0.18044, 1.17315, -0.810535, -1.22787, 0.922247, -1.30489, -1.24597, -0.482485, -1.49822, -0.088927, -0.528936, -1.49852, 0, -0.524528)
 
 [node name="Platform0" instance=ExtResource("1_omdgu")]
-seed = 162675
+seed = 2806367969
 
 [node name="PlatformsRock1" type="MeshInstance3D" parent="." index="0"]
-material_override = SubResource("ShaderMaterial_iqxr2")
+material_override = SubResource("ShaderMaterial_cpsbs")
 mesh = ExtResource("2_0tnll")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
