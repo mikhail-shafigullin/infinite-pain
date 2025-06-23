@@ -91,6 +91,7 @@ wait_time = 0.5
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("2_pyxj7")
+volume_db = -80.0
 
 [connection signal="timeout" from="bpmTimer" to="." method="_on_bpm_timer_timeout"]
 [connection signal="timeout" from="delayTimer" to="." method="_on_delay_timer_timeout"]
