@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://c52xouag8624f"]
+
+[ext_resource type="Material" uid="uid://cn7xhgcajsnyh" path="res://assetes/materials/fracture.tres" id="1_57f3k"]
+[ext_resource type="PackedScene" uid="uid://ddmy66eo6lg72" path="res://objects/platforms/platform0.tscn" id="2_3m45f"]
+[ext_resource type="PackedScene" uid="uid://dp58gtxe64wkm" path="res://objects/platforms/platform1.tscn" id="3_pm7ne"]
+[ext_resource type="PackedScene" uid="uid://b15qrvcnql8rc" path="res://objects/platforms/platform2.tscn" id="4_fy8vh"]
+[ext_resource type="PackedScene" uid="uid://dx4bm6kljcq6g" path="res://objects/platforms/platform3.tscn" id="5_w5tin"]
+[ext_resource type="PackedScene" uid="uid://bac6e4ei682y7" path="res://objects/platforms/platform4.tscn" id="6_2qyo6"]
+[ext_resource type="PackedScene" uid="uid://m6uh7q2fqtcv" path="res://objects/platforms/platform5.tscn" id="7_4tx00"]
+[ext_resource type="PackedScene" uid="uid://ci758wipcthvj" path="res://objects/platforms/platform6.tscn" id="8_f3qhy"]
+[ext_resource type="PackedScene" uid="uid://bxgitptxjpiby" path="res://objects/platforms/platform7.tscn" id="9_bajen"]
+[ext_resource type="PackedScene" uid="uid://nyhqvisgrlt3" path="res://objects/platforms/platform8.tscn" id="10_unpny"]
+[ext_resource type="PackedScene" uid="uid://bbgmwyai7wfbw" path="res://objects/platforms/platform9.tscn" id="11_nk3at"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_td4yi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uqnoh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qckgx"]
+
+[sub_resource type="Environment" id="Environment_r7b1y"]
+ambient_light_source = 2
+ambient_light_color = Color(0.29, 0.29, 0.29, 1)
+glow_enabled = true
+glow_intensity = 2.0
+glow_bloom = 1.0
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_td4yi")
+surface_material_override/0 = ExtResource("1_57f3k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168522, 1.64609)
+mesh = SubResource("BoxMesh_uqnoh")
+surface_material_override/0 = ExtResource("1_57f3k")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168522, -1.67506)
+mesh = SubResource("SphereMesh_qckgx")
+surface_material_override/0 = ExtResource("1_57f3k")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r7b1y")
+
+[node name="Platform1" parent="." instance=ExtResource("2_3m45f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45393, -1.14284, 7.14764)
+color = Color(0.994677, 0.437882, 0.460398, 1)
+
+[node name="Platform2" parent="." instance=ExtResource("3_pm7ne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05081, -2.36663, -6.61944)
+seed = 1532325809
+time_offset = null
+color = null
+
+[node name="Platform3" parent="." instance=ExtResource("4_fy8vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80855, -1.49474, 3.22085)
+seed = 3245240173
+time_offset = null
+color = null
+
+[node name="Platform11" parent="." instance=ExtResource("4_fy8vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30171, -1.49474, 3.22085)
+seed = 2302771486
+time_offset = null
+color = null
+
+[node name="Platform12" parent="." instance=ExtResource("4_fy8vh")]
+transform = Transform3D(-0.205658, 0, 0.978624, 0, 1, 0, -0.978624, 0, -0.205658, -3.88744, 0.386326, 1.09834)
+seed = 3103569432
+time_offset = null
+color = null
+
+[node name="Platform13" parent="." instance=ExtResource("4_fy8vh")]
+transform = Transform3D(-0.897536, 0, 0.440942, 0, 1, 0, -0.440942, 0, -0.897536, 2.00088, -2.79318, 6.87484)
+seed = 622969536
+time_offset = null
+color = null
+
+[node name="Platform4" parent="." instance=ExtResource("5_w5tin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0173, 0.732936, 5.88847)
+seed = 2516937456
+time_offset = null
+color = null
+
+[node name="Platform5" parent="." instance=ExtResource("6_2qyo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51068, 2.38419e-07, -6.86234)
+seed = 2554251178
+time_offset = null
+color = null
+
+[node name="Platform6" parent="." instance=ExtResource("7_4tx00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.40614, 2.09854, -0.517218)
+seed = 3058040531
+time_offset = null
+color = null
+
+[node name="Platform7" parent="." instance=ExtResource("8_f3qhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.28753, 2.31235, -14.1075)
+seed = 3970139160
+time_offset = null
+color = null
+
+[node name="Platform8" parent="." instance=ExtResource("9_bajen")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06178, 2.38419e-07, 0.582947)
+seed = 789655078
+time_offset = null
+color = null
+
+[node name="Platform9" parent="." instance=ExtResource("10_unpny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20382, -2.38419e-07, -2.74884)
+seed = 429053514
+time_offset = null
+color = null
+
+[node name="Platform10" parent="." instance=ExtResource("11_nk3at")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22205, 0, -6.13)
+seed = 2806515561
+time_offset = null
+color = null
