@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://t74gnyx754v6"]
+
+[ext_resource type="Script" uid="uid://vto3r6gcydfd" path="res://src/global/bpmController.gd" id="1_b5prx"]
+
+[node name="bpmController" type="Node"]
+script = ExtResource("1_b5prx")

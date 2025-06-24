@@ -2,7 +2,7 @@ class_name ScreenController
 extends Node
 
 const baseLevel = preload("res://levels/BaseLevel.tscn")
-const rhythmDelayCheckUI = preload("res://levels/rhythmDelayCheckUI.tscn")
+const rhythmDelayCheckUI = preload("res://levels/ui/rhythmDelayCheckUI.tscn")
 
 @onready var loadedLevelContainer = %LoadedLevel;
 @onready var canvasLayer = %CanvasLayer;

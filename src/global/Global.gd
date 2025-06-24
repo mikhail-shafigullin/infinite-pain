@@ -1,8 +1,8 @@
 extends Node
 
 var jsController: JSController;
-var bpmController: BpmController;
 var screenController: ScreenController;
+var player: PlayerController;
 
 func is_everything_loaded():
-	return jsController && bpmController && screenController;
+	return jsController && screenController;

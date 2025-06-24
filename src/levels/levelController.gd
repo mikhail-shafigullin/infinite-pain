@@ -26,12 +26,16 @@ func _ready():
 	arenaRadius = cylinderMesh.bottom_radius;
 	
 	rnd = RandomNumberGenerator.new();
+	if(CheatController.startsFromFloor != 0):
+		player.global_position.y = CheatController.startsFromFloor * floorHeight;
 	generatePlatformsFromPlayerPosition();
 	pass;
 
 func _process(delta):
 	if(player.position.y >= floorHeight * (currentFloor + 1)):
+		print("Current floor: ", currentFloor);
 		currentFloor+=1;
+		BpmController.bpm += 5;
 		generatePlatformsFromPlayerPosition();
 		
 	pass;
@@ -49,7 +53,7 @@ func generatePlatformsForFloor(floor: int):
 		var y = floorHeight*floor + rnd.randf_range(0, floorHeight);
 		var z = l * sin(angle);
 		
-		if(floor == 0 && y < 2. && abs(x) < 1 && abs(z) < 1.):
+		if(floor == 0 && y < 3. && abs(x) < 1 && abs(z) < 1.):
 			continue;
 			
 		

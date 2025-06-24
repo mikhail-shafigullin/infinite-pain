@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gd6a3r37gt8t"]
 
-[ext_resource type="Script" uid="uid://j2b1bbxlbs4a" path="res://src/ui/rhythm_delay_check_ui.gd" id="1_fug5s"]
-[ext_resource type="AudioStream" uid="uid://c2lmanefs6kjr" path="res://assetes/sound/Snaredrum-01.wav" id="2_pyxj7"]
+[ext_resource type="Script" uid="uid://j2b1bbxlbs4a" path="res://src/ui/rhythm_delay_check_ui.gd" id="1_n3klq"]
+[ext_resource type="AudioStream" uid="uid://c2lmanefs6kjr" path="res://assetes/sound/Snaredrum-01.wav" id="2_btxgl"]
 
 [node name="RhythmDelayCheckUi" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fug5s")
+script = ExtResource("1_n3klq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -90,7 +90,7 @@ wait_time = 0.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("2_pyxj7")
+stream = ExtResource("2_btxgl")
 volume_db = -80.0
 
 [connection signal="timeout" from="bpmTimer" to="." method="_on_bpm_timer_timeout"]

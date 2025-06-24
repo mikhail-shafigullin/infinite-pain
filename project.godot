@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://src/global/Global.gd"
+BpmController="*res://objects/controllers/bpm_controller.tscn"
+CheatController="*res://src/global/cheat_controller.gd"
 
 [debug_draw_3d]
 

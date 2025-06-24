@@ -18,9 +18,7 @@ var approximate_delay;
 var bpmTimerWaitTimeMs = 1000;
 
 func _ready():
-	print(Global.bpmController)
-	if(!Global.bpmController):
-		Global.bpmController = BpmController.new();
+	print(BpmController)
 	
 	beatTemplate.visible = false;
 	bpmTimer.start();

@@ -14,12 +14,17 @@ extends CharacterBody3D
 
 var mouseInput = Vector2(0, 0);
 
+@export var coyote_time: float = 0.5;
+var time_in_air = 0
+var is_jumped = false;
+
 # Physics
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	velocity = Vector3.ZERO
+	velocity = Vector3.ZERO;
+	Global.player = self;
 
 func _process(delta):
 	handle_mouse_look()
@@ -30,10 +35,23 @@ func _physics_process(delta):
 func handle_movement(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta;
+		time_in_air+= delta;
 		if !Input.is_action_pressed("jump"):
 			velocity.y -= jump_gravity_reduction;
+	
+	if is_on_floor():
+		is_jumped = false
+		time_in_air = 0;
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if (
+		Input.is_action_just_pressed("jump") 
+		and (
+			CheatController.isInfiniteJumps or
+			(!is_jumped 
+			and ( is_on_floor() or time_in_air < coyote_time ) )
+		)
+	):
+		is_jumped = true
 		velocity.y = jump_velocity;
 
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")

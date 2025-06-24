@@ -60,34 +60,26 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.2001, -55.142)
 
 [node name="1" parent="PlatformTemplates" instance=ExtResource("4_x6cm1")]
-seed = 2439153767
 
 [node name="2" parent="PlatformTemplates" instance=ExtResource("5_vt8va")]
-seed = 2737697684
+seed = 0
 
 [node name="3" parent="PlatformTemplates" instance=ExtResource("6_w37d0")]
-seed = 1883804684
 
 [node name="Platform3" parent="PlatformTemplates" instance=ExtResource("7_0ekkx")]
-seed = 552111100
 
 [node name="Platform4" parent="PlatformTemplates" instance=ExtResource("8_2pniv")]
-seed = 717070318
 
 [node name="Platform5" parent="PlatformTemplates" instance=ExtResource("9_u31mj")]
-seed = 2733076859
 
 [node name="Platform6" parent="PlatformTemplates" instance=ExtResource("10_4l0ra")]
-seed = 2407234222
 
 [node name="Platform7" parent="PlatformTemplates" instance=ExtResource("11_h7m5i")]
-seed = 3304694614
 
 [node name="Platform8" parent="PlatformTemplates" instance=ExtResource("12_a4m2w")]
-seed = 1954379740
+seed = 0
 
 [node name="Platform9" parent="PlatformTemplates" instance=ExtResource("13_ml5sj")]
-seed = 251814695
 
 [node name="Node3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79215, 0, -13.5582)
@@ -115,4 +107,3 @@ shape = SubResource("ConcavePolygonShape3D_0ekkx")
 
 [node name="1" parent="." instance=ExtResource("4_x6cm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.79989, -5.12691)
-seed = 2483019792
