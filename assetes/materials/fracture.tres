@@ -10,4 +10,4 @@ shader_parameter/fracture_texture = ExtResource("2_gog5i")
 shader_parameter/primary = Color(0.53, 0.369, 0.185, 1)
 shader_parameter/bpm = 120
 shader_parameter/time_offset = 0.0
-shader_parameter/seed = 375
+shader_parameter/seed = 0

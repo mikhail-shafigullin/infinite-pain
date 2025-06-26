@@ -21,14 +21,14 @@ var mat: ShaderMaterial = null
 			time_offset = val
 			mat["shader_parameter/time_offset"] = val
 
-@export var color: Color = Color.CRIMSON:
+@export var color: Color = Color(0.53, 0.369, 0.185, 1.0):
 	set (val):
 		if mat:
 			color = val
 			mat["shader_parameter/primary"] = val
 
 func _ready() -> void:
-	if(BpmController):
+	if (BpmController and not Engine.is_editor_hint()):
 		BpmController.bpm_changed.connect(_on_bpm_changed);
 		BpmController.delay_changed.connect(_on_bpm_changed);
 		

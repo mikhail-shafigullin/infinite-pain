@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4iuxsql34dhj"]
+
+[ext_resource type="PackedScene" uid="uid://c383vd27enkvg" path="res://objects/enemys/enemy_BASE.tscn" id="1_m5f44"]
+[ext_resource type="Script" uid="uid://dad24ijvx6wc" path="res://objects/enemys/fly.gd" id="2_jjcf3"]
+[ext_resource type="ArrayMesh" uid="uid://6bfd1kixmfbo" path="res://assetes/mesh/enemys/fly_Icosphere.res" id="2_mh2m3"]
+
+[sub_resource type="Animation" id="Animation_jjcf3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlyIcosphere:blend_shapes/puff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nschb"]
+resource_name = "idle_120bpm"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlyIcosphere:blend_shapes/puff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1.51572, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, -0.32572, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f52lg"]
+_data = {
+&"RESET": SubResource("Animation_jjcf3"),
+&"idle_120bpm": SubResource("Animation_nschb")
+}
+
+[node name="Fly" instance=ExtResource("1_m5f44")]
+script = ExtResource("2_jjcf3")
+die_time = 7.0
+
+[node name="FlyIcosphere" type="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_mh2m3")
+blend_shapes/puff = 0.0
+blend_shapes/dead0 = 0.0
+blend_shapes/dead1 = 0.0
+blend_shapes/dead2 = 0.0
+blend_shapes/dead3 = 0.0
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_f52lg")
+}
+autoplay = "idle_120bpm"
