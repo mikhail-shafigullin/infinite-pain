@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct5txr01aeiku"]
+
+[ext_resource type="PackedScene" uid="uid://b2jppic2btaq7" path="res://objects/player2d.tscn" id="1_nbwop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbwop"]
+size = Vector2(783.5, 57.5)
+
+[sub_resource type="Gradient" id="Gradient_nbwop"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sfysa"]
+gradient = SubResource("Gradient_nbwop")
+
+[node name="Train01" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nbwop")]
+position = Vector2(282, 229)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(320, 370)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_nbwop")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-0.999985, 0.500002)
+scale = Vector2(3.0625, 55)
+texture = SubResource("GradientTexture1D_sfysa")
